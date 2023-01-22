@@ -4,14 +4,15 @@ import { AuthContext } from '../context/AuthContext';
 
 
 export const LoginPage = () => {
-
+  console.log('LOGIN')
   const { login } = useContext(AuthContext)
   const navigate = useNavigate();
 
   const onLogin = () => {
+  const lastPath = localStorage.getItem('lastPath') || '/';
 
     login('El Wla')
-    navigate('/', {
+    navigate(lastPath, {
       replace: true
   });
   }
